@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Training">
+
+    <LinearLayout
+        android:id="@+id/day_selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1">
+
+        <Button
+            android:id="@+id/mon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="selectDay"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/mon"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/wed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:onClick="selectDay"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/wed"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/fri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:onClick="selectDay"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/fri"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mon_exer_selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/day_selection"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/sq_heavy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="selectExer"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/sq"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/bp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:onClick="selectExer"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/bp"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/pr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:onClick="selectExer"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/pr"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wed_exer_selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/day_selection"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/dl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="selectExer"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/dl"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/ohp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:onClick="selectExer"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/ohp"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/sq_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:onClick="selectExer"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/sq"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/exer_table"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mon_exer_selection">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/exer_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/week"
+                    android:textSize="25dp"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/exer_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:autoSizeTextType="uniform"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="toPriorWeek"
+                android:text="@string/prior_week" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="toNextWeek"
+                android:text="@string/next_week" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:text="@string/set_num"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:text="@string/weight"
+                        android:gravity="center"/>
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TableRow
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/set1_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/set2_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/set3_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/set4_reps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="5"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/set4_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/set5_reps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/main_set5"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/set5_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="20dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/set6_reps"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/max_reps"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/set6_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="20dp" />
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/complete"
+        android:textSize="30dp"
+        android:onClick="complete"
+        app:layout_constraintTop_toBottomOf="@id/exer_table"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.4"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:onClick="back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.1"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

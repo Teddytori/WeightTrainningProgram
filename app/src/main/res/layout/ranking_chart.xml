@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RankingChart">
+
+    <TableLayout
+        android:id="@+id/exBig3_table"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".25"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/ex1RM"
+                android:textSize="15dp"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow
+            android:layout_weight="1"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/sq"
+                android:textSize="20dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/ex1Reps0"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+
+        </TableRow>
+        <TableRow
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/bp"
+                android:textSize="20dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/ex1Reps1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/dl"
+                android:textSize="20dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/ex1Reps2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/expected_big3"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/exBig3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:gravity="center"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias=".4">
+
+        <TextView
+            android:id="@+id/user_weight_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="@string/user_weight" />
+
+        <EditText
+            android:id="@+id/weight_input"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:inputType="number"
+            android:background="@drawable/input_box"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="kg"
+            android:textSize="20dp"/>
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:text="@string/save"
+            android:onClick="saveWeight"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        android:text="@string/read_for_fun"
+        android:textSize="15dp"
+        android:gravity="center"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".25"
+        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/rank"
+                android:textSize="15dp"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow
+            android:layout_weight="1"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/sq"
+                android:textSize="20dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/rank0"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+
+        </TableRow>
+        <TableRow
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/bp"
+                android:textSize="20dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/rank1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/dl"
+                android:textSize="20dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/rank2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:gravity="center"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rank_info"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent=".98"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/input_box"
+        android:backgroundTint="@color/colorBack">
+
+        <TextView
+            android:id="@+id/rank_info_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/rank_info"
+            android:textSize="20dp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/rank_info_table"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias=".03"/>
+
+        <TableLayout
+            android:id="@+id/rank_info_table"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent=".96"
+            app:layout_constraintHeight_percent=".8"
+            app:layout_constraintVertical_bias=".9"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <TableRow
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#000000">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#DDEBF7"
+                    android:text="@string/newbie"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#DDEBF7"
+                    android:text="@string/newbie_info"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#000000">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#FCE4D6"
+                    android:text="@string/beginner"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#FCE4D6"
+                    android:text="@string/beginner_info"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#000000">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#FFF2CC"
+                    android:text="@string/intermediate"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#FFF2CC"
+                    android:text="@string/intermediate_info"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#000000">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#D9E1F2"
+                    android:text="@string/advanced"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#D9E1F2"
+                    android:text="@string/advanced_info"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#000000">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#E2EFDA"
+                    android:text="@string/elite"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:background="#E2EFDA"
+                    android:text="@string/elite_info"/>
+
+            </TableRow>
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rank_info"
+        android:onClick="showRankInfo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.9"/>
+
+    <Button
+        android:id="@+id/ranking_chart_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:onClick="back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
