@@ -17,6 +17,8 @@
     <string name="min_plate">체육관에서 가장 작은 원판의 무게(kg)</string>
     <string name="save">저장</string>
     <string name="back">뒤로</string>
+    <string name="load">불러오기</string>
+    <string name="tooEarly">5주차 이상부터 불러오기가 가능합니다</string>
     <string name="expected_big3">3대 기록</string>
     <string name="not_enough_info">정보가 부족합니다</string>
     <string name="save_success">저장 완료</string>

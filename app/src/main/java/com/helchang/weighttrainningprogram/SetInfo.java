@@ -16,12 +16,16 @@ public class SetInfo extends AppCompatActivity {
     public static float[] inputValues = new float[6];
     public static float[] startWeights = new float[5];
     public static int[] big3Weights = new int[3];
+    private final EditText inputs[] = new EditText[6];
+
+    SharedPreferences sharedPref;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_info);
 
-        final EditText inputs[] = new EditText[6];
+        sharedPref = SetInfo.this.getSharedPreferences(getString(R.string.user_data), Context.MODE_PRIVATE);
+
         inputs[0] = (EditText)findViewById(R.id.sq_input);
         inputs[1] = (EditText)findViewById(R.id.bp_input);
         inputs[2] = (EditText)findViewById(R.id.dl_input);
@@ -49,7 +53,6 @@ public class SetInfo extends AppCompatActivity {
                     }
                 }
 
-                SharedPreferences sharedPref = SetInfo.this.getSharedPreferences(getString(R.string.user_data), Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
 
                 inputValues = new float[inputs.length];
@@ -84,6 +87,20 @@ public class SetInfo extends AppCompatActivity {
             }
         });
 
+    }
+    
+    public void loadData(View v){
+        float main;
+        int week;
+        for(int i = 0; i < 5; ++i){
+            main = 0;
+            week = sharedPref.getInt("curWeek" + i, 0);
+            if(week != 0){
+                main = Math.round( SetInfo.startWeights[i] * (float)(Math.pow(1.025, week - 1) / (2 * SetInfo.inputValues[5])) ) * (2 * SetInfo.inputValues[5]);
+            }
+            if(main <= SetInfo.startWeights[i]) main = inputValues[i];
+            inputs[i].setText(String.valueOf(main));
+        }
     }
 
 }
